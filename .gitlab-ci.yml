@@ -1,0 +1,7 @@
+image: unleashed/php:7.4
+
+phpunit:
+  before_script:
+    - composer install --no-progress --prefer-dist --optimize-autoloader --ansi
+  script:
+    - ./vendor/bin/phpunit
