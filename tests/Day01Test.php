@@ -15,6 +15,6 @@ final class Day01Test extends TestCase
 
         $input = 'REPLACE ME';
 
-        $this->assertSame('Replace this with the expected solution', $solution->solvePuzzle($input));
+        $this->assertSame('Replace this with the code needed to get your answer', $solution->solvePuzzle($input));
     }
 }
