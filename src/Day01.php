@@ -10,7 +10,6 @@ final class Day01
     {
         foreach ($expenseReport as $key => $item) {
             $topItem = array_shift($expenseReport);
-            $result[] = count($expenseReport);
 
             $match = $this->findMatch($topItem, $expenseReport);
             if ($match) {
