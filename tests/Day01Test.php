@@ -232,5 +232,6 @@ final class Day01Test extends TestCase {
         $solution = new Day01();
 
         $this->assertSame(241861950, $solution->solvePuzzlePart2($this->expenseReport1));
+        $this->assertSame(263819430, $solution->solvePuzzlePart2($this->expenseReport2));
     }
 }

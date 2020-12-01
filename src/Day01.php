@@ -9,9 +9,7 @@ final class Day01
     public function solvePuzzlePart1(array $expenseReport)
     {
         foreach ($expenseReport as $key => $item) {
-            $topItem = array_shift($expenseReport);
-
-            $match = $this->findMatch($topItem, $expenseReport);
+            $match = $this->findMatch([$key], $item, $expenseReport);
             if ($match) {
                 return $item * $match;
             }
@@ -22,14 +20,30 @@ final class Day01
 
     public function solvePuzzlePart2(array $expenseReport)
     {
-        return 241861950;
+        foreach ($expenseReport as $key => $item) {
+            foreach ($expenseReport as $secondKey => $secondItem) {
+                if ($key === $secondKey) {
+                    continue;
+                }
+
+                $match = $this->findMatch([$key, $secondKey], $item + $secondItem, $expenseReport);
+                if ($match) {
+                    return $item * $secondItem * $match;
+                }
+            }
+        }
+
+        return false;
     }
 
-    private function findMatch (int $item, array $expenseReport)
+    private function findMatch (array $invalidKeys, int $item, array $expenseReport)
     {
-        foreach ($expenseReport as $candidate) {
-            if ($item + $candidate === 2020)
-            {
+        foreach ($expenseReport as $candidateKey => $candidate) {
+            if (in_array($candidateKey, $invalidKeys, true)) {
+                continue;
+            }
+
+            if ($item + $candidate === 2020) {
                 return $candidate;
             }
         }
