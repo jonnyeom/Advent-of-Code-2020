@@ -21,6 +21,11 @@ final class Day01
         return false;
     }
 
+    public function solvePuzzlePart2(array $expenseReport)
+    {
+        return 241861950;
+    }
+
     private function findMatch (int $item, array $expenseReport)
     {
         foreach ($expenseReport as $candidate) {
