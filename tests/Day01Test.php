@@ -7,6 +7,9 @@ namespace UnleashedTech\AdventOfCode2020\Tests;
 use PHPUnit\Framework\TestCase;
 use UnleashedTech\AdventOfCode2020\Day01;
 
+/**
+ * @coversDefaultClass \UnleashedTech\AdventOfCode2020\Day01
+ */
 final class Day01Test extends TestCase {
 
     private array $expenseReport1 = [
@@ -221,6 +224,9 @@ final class Day01Test extends TestCase {
         1407,
     ];
 
+    /**
+     * @covers ::solvePuzzlePart1
+     */
     public function testSolvePuzzlePart1(): void {
         $solution = new Day01();
 
@@ -228,6 +234,9 @@ final class Day01Test extends TestCase {
         $this->assertSame(858496, $solution->solvePuzzlePart1($this->expenseReport2));
     }
 
+    /**
+     * @covers ::solvePuzzlePart2
+     */
     public function testSolvePuzzlePart2(): void {
         $solution = new Day01();
 
