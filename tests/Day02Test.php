@@ -22,6 +22,16 @@ final class Day02Test extends TestCase {
         self::assertSame(660, $solution->getNumberOfValidPasswords($this->passwords2));
     }
 
+    /**
+     * @covers ::getUpdatedNumberOfValidPasswords
+     */
+    public function testGetUpdatedNumberOfValidPasswords(): void {
+        $solution = new Day02();
+
+        self::assertSame(1, $solution->getUpdatedNumberOfValidPasswords($this->passwords1));
+        self::assertSame(530, $solution->getUpdatedNumberOfValidPasswords($this->passwords2));
+    }
+
     private $passwords1 = [
         '1-3 a: abcde',
         '1-3 b: cdefg',
