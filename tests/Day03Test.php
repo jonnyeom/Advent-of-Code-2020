@@ -22,6 +22,16 @@ final class Day03Test extends TestCase {
         self::assertSame(247, $solution->getNumberOfTreesEncountered($this->trees2));
     }
 
+    /**
+     * @covers ::getAllSlopesMultiplied
+     */
+    public function testGetAllSlopesMultiplied(): void {
+        $solution = new Day03();
+
+        self::assertSame(336, $solution->getAllSlopesMultiplied($this->trees1));
+        self::assertSame(2983070376, $solution->getAllSlopesMultiplied($this->trees2));
+    }
+
     private $trees1 = [
         '..##.........##.........##.........##.........##.........##.......',
         '#...#...#..#...#...#..#...#...#..#...#...#..#...#...#..#...#...#..',
